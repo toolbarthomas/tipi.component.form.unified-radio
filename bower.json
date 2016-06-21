@@ -1,0 +1,17 @@
+{
+  "name": "tipi.component.form.unified-radio",
+  "homepage": "https://github.com/toolbarthomas/tipi.base.fluid",
+  "authors": [
+    "Thomas van der Velde <contact@toolbarthomas.net>"
+  ],
+  "description": "Javascript component for styling radio buttons",
+  "keywords": [
+    "toolbarthomas",
+    "modular",
+    "tipi",
+    "form",
+    "radio"
+  ],
+  "license": "MIT",
+  "main": "_tipi.component.form.unified-radio.scss"
+}
