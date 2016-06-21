@@ -1,0 +1,134 @@
+@mixin core_unified-radio {
+	.radio {
+		display: block;
+		font-size: inherit;
+		margin-bottom: $unified-radio-margin-bottom;
+
+		&:last-child,
+		&:only-child {
+			margin-bottom: 0;
+		}
+
+		input {
+			margin: 0;
+		}
+
+		&.__radio--ready {
+			cursor: pointer;
+			-webkit-tap-highlight-color: rgba(0,0,0,0);
+			-webkit-tap-highlight-color: transparent;
+			@include user-select(none);
+		}
+
+		&.__radio--disabled {
+			opacity: $unified-radio-control-glyph-opacity;
+
+			* {
+				cursor: default;
+				cursor: not-allowed;
+			}
+		}
+	}
+
+	.radio-label {
+		display: table;
+		margin: 0;
+		padding: 0;
+		cursor: pointer;
+		color: inherit;
+		font-size: inherit;
+		font-weight: $unified-checkbox-label-font-weight;
+
+		@if $unified-radio-transitions == true {
+			@include transition(
+				(color $transition-fast ease-out 0s)
+			);
+		}
+	}
+
+	.radio-aside,
+	.radio-body {
+		display: table-cell;
+		height: 100%;
+		vertical-align: middle;
+	}
+
+	.radio-aside {
+		width: 1%;
+		white-space: nowrap;
+	}
+
+	.radio-body {
+		width: 100%;
+		margin: 0;
+		padding-left: $unified-radio-control-size / 2;
+	}
+
+	.radio-glyph {
+		display: inline-block;
+		vertical-align: middle;
+
+		input {
+			margin: 0;
+		}
+
+		.__radio--ready & {
+			position: relative;
+			overflow: hidden;
+			background-position: center center;
+			background-repeat: no-repeat;
+			width: $unified-radio-control-size;
+			height: $unified-radio-control-size;
+
+			@if $unified-radio-transitions {
+				@include transition(
+					(border-color $transition-fast ease-out 0s),
+					(background $transition-fast ease-out 0s),
+					(box-shadow $transition-fast ease-out 0s)
+				);
+			}
+
+			&:after {
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: $unified-radio-control-glyph-size;
+				height: $unified-radio-control-glyph-size;
+				margin-left: 0 - $unified-radio-control-glyph-size / 2;
+				margin-top: 0 - $unified-radio-control-glyph-size / 2;
+				content: " ";
+				background: transparent;
+
+				@if $unified-radio-transitions {
+					@include transition(
+						(background $transition-fast ease-out 0s)
+					);
+				}
+			}
+
+			input {
+				position: absolute;
+				top: 0;
+				right: 100%;
+				position: absolute;
+				width: 0.1px;
+				height: 0.1px;
+				opacity: 0;
+				overflow: hidden;
+			}
+		}
+
+		.__radio--focus &, {
+			&:after {
+				opacity: 1;
+			}
+		}
+
+		.__radio--disabled.__radio--focus & {
+			&:after {
+				display: none;
+			}
+		}
+	}
+}

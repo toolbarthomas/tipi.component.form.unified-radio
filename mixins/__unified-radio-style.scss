@@ -1,0 +1,118 @@
+@mixin unified-radio-style(
+	$selector: null,
+	$background-color: false,
+	$background-color--focus: false,
+	$background-color--checked: false,
+	$color: false,
+	$color--focus: false,
+	$color--checked: false,
+	$border: false,
+	$border-color--focus: false,
+	$border-color--checked: false,
+	$border-radius: false,
+	$box-shadow: false,
+	$box-shadow--focus: false,
+	$box-shadow--checked: false,
+	$glyph-color: false,
+	$glyph-color--focus: false,
+	$glyph-color--checked: false,
+	$glyph-border-radius: false
+) {
+	@if $selector != false {
+		.radio {
+			&#{$selector} {
+				&.__radio--ready {
+					.radio-label {
+						@if $color != false {
+							color: $color;
+						}
+					}
+
+					.radio-glyph {
+						@if $background-color != false {
+							background-color: $background-color;
+						}
+
+						@if $border != false {
+							border: $border;
+						}
+
+						@if $border-radius != false {
+							border-radius: $border-radius;
+						}
+
+						@if $box-shadow != false {
+							box-shadow: $box-shadow;
+						}
+
+						&:after {
+							@if $glyph-color != false {
+								background-color: $glyph-color;
+							}
+
+							@if $glyph-border-radius != false  {
+								border-radius: $glyph-border-radius;
+							}
+						}
+					}
+				}
+
+				&.__radio--focus {
+					.radio-label {
+						@if $color--focus != false {
+							color: $color--focus;
+						}
+					}
+
+					.radio-glyph {
+						@if $background-color--focus != false {
+							background-color: $background-color--focus;
+						}
+
+						@if $border-color--focus != false {
+							border-color: $border-color--focus;
+						}
+
+						@if $box-shadow--focus != false {
+							box-shadow: $box-shadow--focus;
+						}
+
+						&:after {
+							@if $glyph-color--focus != false {
+								background-color: $glyph-color--focus;
+							}
+						}
+					}
+				}
+
+				&.__radio--checked {
+					.radio-label {
+						@if $color--checked != false {
+							color: $color--checked;
+						}
+					}
+
+					.radio-glyph {
+						@if $background-color--checked != false {
+							background-color: $background-color--checked;
+						}
+
+						@if $border-color--checked != false {
+							border-color: $border-color--checked;
+						}
+
+						@if $box-shadow--checked != false {
+							box-shadow: $box-shadow--checked;
+						}
+
+						&:after {
+							@if $glyph-color--checked != false {
+								background-color: $glyph-color--checked;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
