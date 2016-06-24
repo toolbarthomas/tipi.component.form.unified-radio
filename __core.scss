@@ -99,10 +99,12 @@
 				margin-top: 0 - $unified-radio-control-glyph-size / 2;
 				content: " ";
 				background: transparent;
+				opacity: 0;
 
 				@if $unified-radio-transitions {
 					@include transition(
-						(background $transition-fast ease-out 0s)
+						(background $transition-fast ease-out 0s),
+						(opacity $transition-fast ease-out 0s)
 					);
 				}
 			}
