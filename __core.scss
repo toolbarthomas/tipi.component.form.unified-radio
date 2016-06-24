@@ -121,7 +121,8 @@
 			}
 		}
 
-		.__radio--focus &, {
+		.__radio--focus &,
+		.__radio--checked & {
 			&:after {
 				opacity: 1;
 			}
