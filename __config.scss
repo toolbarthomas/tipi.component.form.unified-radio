@@ -1,8 +1,36 @@
-$unified-radio-margin-bottom: 12px !default;
+$unified-radio-margin-bottom: 								12px !default;
 
-$unified-radio-control-size: 18px !default;
+$unified-radio-control-size: 								18px !default;
 
-$unified-radio-control-glyph-opacity: 0.6 !default;
-$unified-radio-control-glyph-size: 4px !default;
+$unified-radio-control-glyph-opacity: 						0.6 !default;
+$unified-radio-control-glyph-size: 							4px !default;
 
-$unified-radio-transitions: true !default;
+$unified-radio-transitions: 								true !default;
+
+$unified-radio-validation-enabled-for-font-color: 			true !default;
+$unified-radio-validation-enabled-for-border-color: 		true !default;
+$unified-radio-validation-enabled-for-background-color: 	true !default;
+
+@if $unified-radio-validation-enabled-for-font-color == true {
+	@if variable-exists(form-validation-font-color-selectors) == false {
+		$form-validation-font-color-selectors: () !global;
+	}
+
+	$form-validation-font-color-selectors: append($form-validation-font-color-selectors, ('.radio.__radio--ready .radio-label'), comma);
+}
+
+@if $unified-radio-validation-enabled-for-border-color == true {
+	@if variable-exists(form-validation-border-color-selectors) == false {
+		$form-validation-border-color-selectors: () !global;
+	}
+
+	$form-validation-border-color-selectors: append($form-validation-border-color-selectors, ('.radio.__radio--ready .radio-glyph'), comma);
+}
+
+@if $unified-checkbox-validation-enabled-for-background-color == true {
+	@if variable-exists(form-validation-background-color-selectors) == false {
+		$form-validation-background-color-selectors: () !global;
+	}
+
+	$form-validation-background-color-selectors: append($form-validation-border-color-selectors, ('.checkbox.__checkbox--ready .checkbox-glyph'), comma);
+}

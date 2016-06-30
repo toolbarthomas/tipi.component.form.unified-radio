@@ -94,11 +94,11 @@
 
 					.radio-glyph {
 						@if $background-color--checked != false {
-							background-color: $background-color--checked;
+							background-color: $background-color--checked !important;
 						}
 
 						@if $border-color--checked != false {
-							border-color: $border-color--checked;
+							border-color: $border-color--checked !important;
 						}
 
 						@if $box-shadow--checked != false {
