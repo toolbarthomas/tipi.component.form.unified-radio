@@ -41,7 +41,7 @@
 
 		@if $unified-radio-transitions == true {
 			@include transition(
-				(color $transition-fast ease-out 0s)
+				(color $unified-radio-transition-speed $unified-radio-transition-timing 0s)
 			);
 		}
 	}
@@ -82,9 +82,9 @@
 
 			@if $unified-radio-transitions {
 				@include transition(
-					(border-color $transition-fast ease-out 0s),
-					(background $transition-fast ease-out 0s),
-					(box-shadow $transition-fast ease-out 0s)
+					(border-color $unified-radio-transition-speed $unified-radio-transition-timing 0s),
+					(background $unified-radio-transition-speed $unified-radio-transition-timing 0s),
+					(box-shadow $unified-radio-transition-speed $unified-radio-transition-timing 0s)
 				);
 			}
 
@@ -103,8 +103,8 @@
 
 				@if $unified-radio-transitions {
 					@include transition(
-						(background $transition-fast ease-out 0s),
-						(opacity $transition-fast ease-out 0s)
+						(background $unified-radio-transition-speed $unified-radio-transition-timing 0s),
+						(opacity $unified-radio-transition-speed $unified-radio-transition-timing 0s)
 					);
 				}
 			}

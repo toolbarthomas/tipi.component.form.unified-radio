@@ -6,6 +6,8 @@ $unified-radio-control-glyph-opacity: 						0.6 !default;
 $unified-radio-control-glyph-size: 							4px !default;
 
 $unified-radio-transitions: 								true !default;
+$unified-radio-transition-speed:							200ms !default;
+$unified-radio-transition-timing:							ease-in-out;
 
 $unified-radio-validation-enabled-for-font-color: 			true !default;
 $unified-radio-validation-enabled-for-border-color: 		true !default;
@@ -32,5 +34,5 @@ $unified-radio-validation-enabled-for-background-color: 	true !default;
 		$form-validation-background-color-selectors: () !global;
 	}
 
-	$form-validation-background-color-selectors: append($form-validation-border-color-selectors, ('.checkbox.__checkbox--ready .checkbox-glyph'), comma);
+	$form-validation-background-color-selectors: append($form-validation-border-color-selectors, ('.radio.__radio--ready .radio-glyph'), comma);
 }
