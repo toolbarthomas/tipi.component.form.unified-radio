@@ -1,19 +1,24 @@
 @mixin unified-radio-style(
 	$selector: null,
 	$background-color: false,
+	$background-color--hover: false,
 	$background-color--focus: false,
 	$background-color--checked: false,
 	$color: false,
+	$color--hover: false,
 	$color--focus: false,
 	$color--checked: false,
 	$border: false,
+	$border-color--hover: false,
 	$border-color--focus: false,
 	$border-color--checked: false,
 	$border-radius: false,
 	$box-shadow: false,
+	$box-shadow--hover: false,
 	$box-shadow--focus: false,
 	$box-shadow--checked: false,
 	$glyph-color: false,
+	$glyph-color--hover: false,
 	$glyph-color--focus: false,
 	$glyph-color--checked: false,
 	$glyph-border-radius: false
@@ -55,59 +60,87 @@
 							}
 						}
 					}
+
+					.no-touchevents &:hover {
+						.radio-label {
+							@if $color--hover != false {
+								color: $color--hover;
+							}
+						}
+
+						.radio-glyph {
+							@if $background-color--hover != false {
+								background-color: $background-color--hover;
+							}
+
+							@if $border-color--hover != false {
+								border: $border-color--hover;
+							}
+
+							@if $box-shadow--hover != false {
+								box-shadow: $box-shadow--hover;
+							}
+						}
+					}
 				}
 
 				&.__radio--focus {
-					.radio-label {
-						@if $color--focus != false {
-							color: $color--focus;
-						}
-					}
-
-					.radio-glyph {
-						@if $background-color--focus != false {
-							background-color: $background-color--focus;
+					&,
+					.no-touchevents &:hover {
+						.radio-label {
+							@if $color--focus != false {
+								color: $color--focus;
+							}
 						}
 
-						@if $border-color--focus != false {
-							border-color: $border-color--focus;
-						}
+						.radio-glyph {
+							@if $background-color--focus != false {
+								background-color: $background-color--focus;
+							}
 
-						@if $box-shadow--focus != false {
-							box-shadow: $box-shadow--focus;
-						}
+							@if $border-color--focus != false {
+								border-color: $border-color--focus;
+							}
 
-						&:after {
-							@if $glyph-color--focus != false {
-								background-color: $glyph-color--focus;
+							@if $box-shadow--focus != false {
+								box-shadow: $box-shadow--focus;
+							}
+
+							&:after {
+								@if $glyph-color--focus != false {
+									background-color: $glyph-color--focus;
+								}
 							}
 						}
 					}
 				}
 
 				&.__radio--checked {
-					.radio-label {
-						@if $color--checked != false {
-							color: $color--checked;
-						}
-					}
-
-					.radio-glyph {
-						@if $background-color--checked != false {
-							background-color: $background-color--checked !important;
+					&,
+					.no-touchevents & {
+						.radio-label {
+							@if $color--checked != false {
+								color: $color--checked;
+							}
 						}
 
-						@if $border-color--checked != false {
-							border-color: $border-color--checked !important;
-						}
+						.radio-glyph {
+							@if $background-color--checked != false {
+								background-color: $background-color--checked !important;
+							}
 
-						@if $box-shadow--checked != false {
-							box-shadow: $box-shadow--checked;
-						}
+							@if $border-color--checked != false {
+								border-color: $border-color--checked !important;
+							}
 
-						&:after {
-							@if $glyph-color--checked != false {
-								background-color: $glyph-color--checked;
+							@if $box-shadow--checked != false {
+								box-shadow: $box-shadow--checked;
+							}
+
+							&:after {
+								@if $glyph-color--checked != false {
+									background-color: $glyph-color--checked;
+								}
 							}
 						}
 					}
