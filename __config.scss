@@ -11,7 +11,7 @@ $unified-radio-transition-timing:							ease-in-out !default;
 
 $unified-radio-validation-enabled-for-font-color: 			true !default;
 $unified-radio-validation-enabled-for-border-color: 		true !default;
-$unified-radio-validation-enabled-for-background-color: 	true !default;
+$unified-radio-validation-enabled-for-background-color: 	false !default;
 
 @if $unified-radio-validation-enabled-for-font-color == true {
 	@if variable-exists(form-validation-font-color-selectors) == false {
@@ -29,10 +29,10 @@ $unified-radio-validation-enabled-for-background-color: 	true !default;
 	$form-validation-border-color-selectors: append($form-validation-border-color-selectors, ('.radio.__radio--ready .radio-glyph'), comma);
 }
 
-@if $unified-checkbox-validation-enabled-for-background-color == true {
+@if $unified-radio-validation-enabled-for-background-color == true {
 	@if variable-exists(form-validation-background-color-selectors) == false {
 		$form-validation-background-color-selectors: () !global;
 	}
 
-	$form-validation-background-color-selectors: append($form-validation-border-color-selectors, ('.radio.__radio--ready .radio-glyph'), comma);
+	$form-validation-background-color-selectors: append($form-validation-border-color-selectors, ('.radio.__radio--ready .radio-glyph:after'), comma);
 }
