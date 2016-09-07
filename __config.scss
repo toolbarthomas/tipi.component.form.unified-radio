@@ -9,30 +9,18 @@ $unified-radio-transitions: 								true !default;
 $unified-radio-transition-speed:							200ms !default;
 $unified-radio-transition-timing:							ease-in-out !default;
 
-$unified-radio-validation-enabled-for-font-color: 			true !default;
-$unified-radio-validation-enabled-for-border-color: 		true !default;
-$unified-radio-validation-enabled-for-background-color: 	false !default;
+$unified-radio-border-selectors:							('.radio.__radio--ready .radio-glyph') !default;
+$unified-radio-background-selectors:						('.radio.__radio--ready .radio-glyph') !default;
+$unified-radio-font-selectors:								('.radio.__radio--ready .radio-label') !default;
 
-@if $unified-radio-validation-enabled-for-font-color == true {
-	@if variable-exists(form-validation-font-color-selectors) == false {
-		$form-validation-font-color-selectors: () !global;
-	}
-
-	$form-validation-font-color-selectors: append($form-validation-font-color-selectors, ('.radio.__radio--ready .radio-label'), comma);
+@if variable-exists(form-validation-border-selectors) {
+	$form-validation-border-selectors: append($form-validation-border-selectors, $unified-radio-border-selectors, 'comma');
 }
 
-@if $unified-radio-validation-enabled-for-border-color == true {
-	@if variable-exists(form-validation-border-color-selectors) == false {
-		$form-validation-border-color-selectors: () !global;
-	}
-
-	$form-validation-border-color-selectors: append($form-validation-border-color-selectors, ('.radio.__radio--ready .radio-glyph'), comma);
+@if variable-exists(form-validation-background-selectors) {
+	$form-validation-background-selectors: append($form-validation-background-selectors, $unified-radio-background-selectors, 'comma');
 }
 
-@if $unified-radio-validation-enabled-for-background-color == true {
-	@if variable-exists(form-validation-background-color-selectors) == false {
-		$form-validation-background-color-selectors: () !global;
-	}
-
-	$form-validation-background-color-selectors: append($form-validation-border-color-selectors, ('.radio.__radio--ready .radio-glyph:after'), comma);
+@if variable-exists(form-validation-font-selectors) {
+	$form-validation-font-selectors: append($form-validation-font-selectors, $unified-radio-font-selectors, 'comma');
 }

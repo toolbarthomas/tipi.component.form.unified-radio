@@ -13,5 +13,8 @@
     "radio"
   ],
   "license": "MIT",
-  "main": "_tipi.component.form.unified-radio.scss"
+  "main": "_tipi.component.form.unified-radio.scss",
+  "dependencies": {
+    "tipi.tool.form.validation": "^1.0.0",
+  }
 }
