@@ -32,12 +32,14 @@
 
 	.radio-label {
 		display: table;
+		width: 100%;
+		font-size: 0;
+		text-align: left;
 		margin: 0;
 		padding: 0;
 		cursor: pointer;
 		color: inherit;
-		font-size: inherit;
-		font-weight: $unified-checkbox-label-font-weight;
+		table-layout: fixed;
 
 		@if $unified-radio-transitions == true {
 			@include transition(
@@ -46,23 +48,42 @@
 		}
 	}
 
-	.radio-aside,
-	.radio-body {
-		display: table-cell;
-		height: 100%;
+	.radio-label-control,
+	.radio-label-value {
+		display: inline-block;
 		vertical-align: middle;
+		width: auto;
+		position: relative;
+
+		font-weight: $unified-radio-font-weight;
+		@include responsive-font-size($unified-radio-font-size);
 	}
 
-	.radio-aside {
-		width: 1%;
-		white-space: nowrap;
+	.radio-label-control {
+
 	}
 
-	.radio-body {
-		width: 100%;
-		margin: 0;
-		padding-left: $unified-radio-control-size / 2;
+	.radio-label-value {
+
 	}
+
+	// .radio-aside,
+	// .radio-body {
+	// 	display: table-cell;
+	// 	height: 100%;
+	// 	vertical-align: middle;
+	// }
+
+	// .radio-aside {
+	// 	width: 1%;
+	// 	white-space: nowrap;
+	// }
+
+	// .radio-body {
+	// 	width: 100%;
+	// 	margin: 0;
+	// 	padding-left: $unified-radio-control-size / 2;
+	// }
 
 	.radio-glyph {
 		display: inline-block;

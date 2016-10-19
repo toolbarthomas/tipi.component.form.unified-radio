@@ -8,6 +8,10 @@ $unified-radio-control-glyph-size: 							4px !default;
 $unified-radio-transitions: 								true !default;
 $unified-radio-transition-speed:							200ms !default;
 $unified-radio-transition-timing:							ease-in-out !default;
+$unified-radio-transition-delay:							0ms !default;
+
+$unified-radio-font-weight:									400 !default;
+$unified-radio-font-size:									'base-font-size' !default;
 
 $unified-radio-border-selectors:							('.radio.__radio--ready .radio-glyph') !default;
 $unified-radio-background-selectors:						('.radio.__radio--ready .radio-glyph') !default;
